@@ -1,0 +1,58 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_quartz": {
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:quartz"
+						]
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		},
+		"has_glowstone_dust": {
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:glowstone_dust"
+						]
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		}
+	},
+	"requirements": [
+		[
+			"has_quartz",
+			"has_glowstone_dust"
+		]
+	],
+	"rewards": {
+		"recipes": [
+			"spleef_toys:spleef_shovel",
+			"spleef_toys:spleef_controller",
+			"spleef_toys:spawn_point",
+			"spleef_toys:white_pixel",
+			"spleef_toys:light_gray_pixel",
+			"spleef_toys:gray_pixel",
+			"spleef_toys:black_pixel",
+			"spleef_toys:brown_pixel",
+			"spleef_toys:red_pixel",
+			"spleef_toys:orange_pixel",
+			"spleef_toys:yellow_pixel",
+			"spleef_toys:lime_pixel",
+			"spleef_toys:green_pixel",
+			"spleef_toys:cyan_pixel",
+			"spleef_toys:light_blue_pixel",
+			"spleef_toys:blue_pixel",
+			"spleef_toys:purple_pixel",
+			"spleef_toys:magenta_pixel",
+			"spleef_toys:pink_pixel"
+		]
+	}
+}

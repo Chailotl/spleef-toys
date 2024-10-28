@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+		{
+			"bonus_rolls": 0,
+			"conditions": [
+				{
+					"condition": "minecraft:survives_explosion"
+				}
+			],
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "spleef_toys:black_pixel"
+				}
+			],
+			"rolls": 1
+		}
+	],
+	"random_sequence": "spleef_toys:blocks/black_pixel"
+}

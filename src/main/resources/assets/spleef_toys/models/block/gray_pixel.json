@@ -1,0 +1,6 @@
+{
+	"parent": "spleef_toys:block/pixel",
+	"textures": {
+		"all": "spleef_toys:block/gray_pixel"
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"schemaVersion": 1,
+	"id": "spleef_toys",
+	"version": "${version}",
+	"name": "${name}",
+	"description": "Build spleef arenas in survival with the level of convenience offered by server plugins",
+	"authors": [
+		"Chai"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/spleef-toys/",
+		"sources": "https://github.com/chailotl/spleef-toys",
+		"issues": "https://github.com/chailotl/spleef-toys/issues"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"modmenu.discord": "https://discord.gg/SuZb3aJUCx"
+			}
+		}
+	},
+	"license": "LGPL-3.0",
+	"icon": "assets/spleef_toys/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.chailotl.spleef_toys.Main"
+		],
+		"client": [
+			"com.chailotl.spleef_toys.ClientMain"
+		]
+	},
+	"mixins": [
+		"spleef_toys.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"lit=true": {
+			"model": "spleef_toys:block/white_pixel"
+		},
+		"lit=false": {
+			"model": "minecraft:block/air"
+		}
+	}
+}

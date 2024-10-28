@@ -1,0 +1,6 @@
+{
+	"parent": "minecraft:item/handheld",
+	"textures": {
+		"layer0": "spleef_toys:item/spleef_shovel"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "minecraft:block/cube_column",
+	"textures": {
+		"end": "minecraft:block/note_block",
+		"side": "spleef_toys:block/spleef_controller"
+	}
+}

@@ -1,0 +1,24 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "misc",
+	"key": {
+		"X": {
+			"tag": "minecraft:planks"
+		},
+		"q": {
+			"item": "minecraft:quartz"
+		},
+		"#": {
+			"item": "minecraft:iron_shovel"
+		}
+	},
+	"pattern": [
+		"XXX",
+		"q#q",
+		"XXX"
+	],
+	"result": {
+		"count": 1,
+		"id": "spleef_toys:spleef_controller"
+	}
+}

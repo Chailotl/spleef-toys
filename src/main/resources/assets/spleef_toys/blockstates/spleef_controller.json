@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"": {
+			"model": "spleef_toys:block/spleef_controller"
+		}
+	}
+}
