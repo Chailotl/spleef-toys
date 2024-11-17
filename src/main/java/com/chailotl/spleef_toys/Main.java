@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerChunkEvents;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
 import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -93,6 +94,12 @@ public class Main implements ModInitializer
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> {
 			content.add(SPLEEF_CONTROLLER);
 			content.add(SPAWN_POINT);
+		});
+
+		ServerChunkEvents.CHUNK_UNLOAD.register((world, chunk) -> {
+			chunk.forEachBlockMatchingPredicate(state -> state.getBlock() instanceof PixelBlock, (pos, state) -> {
+				chunk.setBlockState(pos, state.with(PixelBlock.LIT, true), false);
+			});
 		});
 	}
 
