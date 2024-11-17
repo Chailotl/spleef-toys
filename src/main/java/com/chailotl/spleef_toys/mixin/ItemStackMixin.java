@@ -21,7 +21,7 @@ public abstract class ItemStackMixin
 	@Inject(method = "canBreak", at = @At("HEAD"), cancellable = true)
 	private void spleefShovelCanBreakPixels(CachedBlockPosition pos, CallbackInfoReturnable<Boolean> cir)
 	{
-		if (this.isOf(Main.SPLEEF_SHOVEL) && pos.getBlockState().getBlock() instanceof PixelBlock)
+		if (isOf(Main.SPLEEF_SHOVEL) && pos.getBlockState().getBlock() instanceof PixelBlock)
 		{
 			cir.setReturnValue(true);
 		}

@@ -4,9 +4,13 @@
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
 		"ItemStackMixin",
-		"PlayerEntityMixin"
+		"PlayerEntityMixin",
+		"ServerPlayerInteractionManagerMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
-	}
+	},
+	"client": [
+		"ClientPlayerInteractionManagerMixin"
+	]
 }
