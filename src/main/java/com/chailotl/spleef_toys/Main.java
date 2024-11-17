@@ -38,7 +38,7 @@ public class Main implements ModInitializer
 		SoundEvents.BLOCK_METAL_FALL
 	);
 
-	public static SpleefShovelItem SPLEEF_SHOVEL = register("spleef_shovel", new SpleefShovelItem(new Item.Settings()));
+	public static SpleefShovelItem SPLEEF_SHOVEL = register("spleef_shovel", new SpleefShovelItem(new Item.Settings().maxCount(1)));
 
 	public static PixelBlock WHITE_PIXEL = registerPixel("white_pixel");
 	public static PixelBlock LIGHT_GRAY_PIXEL = registerPixel("light_gray_pixel");
