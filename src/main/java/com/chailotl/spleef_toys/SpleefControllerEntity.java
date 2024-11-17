@@ -17,9 +17,6 @@ import java.util.List;
 
 public class SpleefControllerEntity extends BlockEntity
 {
-	private static final int MIN_PLAYERS_TO_START = 2;
-	private static final int MAX_PLAYERS_TO_END = 1;
-
 	private SpleefGameState gameState = SpleefGameState.INACTIVE;
 	private int timer = 0;
 	private final List<ServerPlayerEntity> players = new ArrayList<>();
@@ -28,6 +25,16 @@ public class SpleefControllerEntity extends BlockEntity
 	public SpleefControllerEntity(BlockPos pos, BlockState state)
 	{
 		super(Main.SPLEEF_CONTROLLER_ENTITY, pos, state);
+	}
+
+	private static int getMinPlayersToStart(World world)
+	{
+		return world.getGameRules().getBoolean(Main.DEBUG_SOLO_SPLEF) ? 1 : 2;
+	}
+
+	private static int getMaxPlayersToEnd(World world)
+	{
+		return world.getGameRules().getBoolean(Main.DEBUG_SOLO_SPLEF) ? 0 : 1;
 	}
 
 	public void addPlayer(ServerPlayerEntity player)
@@ -122,7 +129,7 @@ public class SpleefControllerEntity extends BlockEntity
 				}
 
 				// Check if all players are standing on spawn points
-				if (players.size() >= MIN_PLAYERS_TO_START && players.stream().allMatch(player -> world.getBlockState(player.getBlockPos()).isOf(Main.SPAWN_POINT)))
+				if (players.size() >= getMinPlayersToStart(world) && players.stream().allMatch(player -> world.getBlockState(player.getBlockPos()).isOf(Main.SPAWN_POINT)))
 				{
 					blockEntity.startGame();
 				}
@@ -175,7 +182,7 @@ public class SpleefControllerEntity extends BlockEntity
 					sendTitle(player, Text.translatable("gui.spleef_toys.lose_message"));
 				}
 
-				if (players.size() <= MAX_PLAYERS_TO_END)
+				if (players.size() <= getMaxPlayersToEnd(world))
 				{
 					blockEntity.endGame();
 				}

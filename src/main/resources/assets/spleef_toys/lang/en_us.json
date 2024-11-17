@@ -28,5 +28,6 @@
 	"gui.spleef_toys.countdown.3": "3...",
 	"gui.spleef_toys.countdown.2": "2...",
 	"gui.spleef_toys.countdown.1": "1...",
-	"gui.spleef_toys.countdown.0": "Go!"
+	"gui.spleef_toys.countdown.0": "Go!",
+	"gamerule.debugSoloSpleef": "Debug solo spleef"
 }

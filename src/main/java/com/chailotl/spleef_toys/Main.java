@@ -4,6 +4,8 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.attachment.v1.AttachmentRegistry;
 import net.fabricmc.fabric.api.attachment.v1.AttachmentType;
+import net.fabricmc.fabric.api.gamerule.v1.GameRuleFactory;
+import net.fabricmc.fabric.api.gamerule.v1.GameRuleRegistry;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.minecraft.block.AbstractBlock;
@@ -20,6 +22,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
+import net.minecraft.world.GameRules;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -75,6 +78,8 @@ public class Main implements ModInitializer
 	public static final AttachmentType<SpleefGameState> SPLEEF_GAME_STATE = AttachmentRegistry.<SpleefGameState>builder()
 		.initializer(() -> SpleefGameState.INACTIVE)
 		.buildAndRegister(id("spleef_game_state"));
+
+	public static final GameRules.Key<GameRules.BooleanRule> DEBUG_SOLO_SPLEF = GameRuleRegistry.register("debugSoloSpleef", GameRules.Category.PLAYER, GameRuleFactory.createBooleanRule(false));
 
 	@Override
 	public void onInitialize()
