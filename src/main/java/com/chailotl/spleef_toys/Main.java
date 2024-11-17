@@ -73,7 +73,6 @@ public class Main implements ModInitializer
 	public static BlockEntityType<SpleefControllerEntity> SPLEEF_CONTROLLER_ENTITY = register("spleef_controller", BlockEntityType.Builder.create(SpleefControllerEntity::new, SPLEEF_CONTROLLER).build());
 
 	public static final AttachmentType<SpleefControllerEntity> SPLEEF_GAME_ENTITY = AttachmentRegistry.<SpleefControllerEntity>builder()
-		.initializer(() -> null)
 		.buildAndRegister(id("spleef_game_entity"));
 	public static final AttachmentType<SpleefGameState> SPLEEF_GAME_STATE = AttachmentRegistry.<SpleefGameState>builder()
 		.initializer(() -> SpleefGameState.INACTIVE)

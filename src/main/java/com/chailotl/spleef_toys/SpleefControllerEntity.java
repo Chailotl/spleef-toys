@@ -47,11 +47,11 @@ public class SpleefControllerEntity extends BlockEntity
 		{
 			timer = 0;
 			players.remove(player);
-			player.setAttached(Main.SPLEEF_GAME_ENTITY, null);
+			player.removeAttached(Main.SPLEEF_GAME_ENTITY);
 			player.sendMessage(Text.translatable("gui.spleef_toys.left_game"), true);
 			player.playSoundToPlayer(SoundEvents.ENTITY_CHICKEN_EGG, SoundCategory.BLOCKS, 0.75f, 0.707107f);
 		}
-		else if (player.getAttached(Main.SPLEEF_GAME_ENTITY) != null)
+		else if (player.hasAttached(Main.SPLEEF_GAME_ENTITY))
 		{
 			player.sendMessage(Text.translatable("gui.spleef_toys.already_in_game"), true);
 		}
@@ -203,7 +203,7 @@ public class SpleefControllerEntity extends BlockEntity
 
 	private static void clearPlayerState(ServerPlayerEntity player)
 	{
-		player.setAttached(Main.SPLEEF_GAME_ENTITY, null);
+		player.removeAttached(Main.SPLEEF_GAME_ENTITY);
 		player.setAttached(Main.SPLEEF_GAME_STATE, SpleefGameState.INACTIVE);
 		ServerPlayNetworking.send(player, new SpleefGameStatePayload(SpleefGameState.INACTIVE));
 	}
