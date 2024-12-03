@@ -23,8 +23,8 @@ public abstract class PlayerEntityMixin extends LivingEntity
 	@Inject(method = "shouldDamagePlayer", at = @At("RETURN"), cancellable = true)
 	private void noDamage(PlayerEntity player, CallbackInfoReturnable<Boolean> cir)
 	{
-		if (getAttached(Main.SPLEEF_GAME_STATE) != SpleefGameState.INACTIVE
-			&& player.getAttached(Main.SPLEEF_GAME_STATE) != SpleefGameState.INACTIVE)
+		if (getAttachedOrCreate(Main.SPLEEF_GAME_STATE) != SpleefGameState.INACTIVE
+			&& player.getAttachedOrCreate(Main.SPLEEF_GAME_STATE) != SpleefGameState.INACTIVE)
 		{
 			cir.setReturnValue(false);
 		}
